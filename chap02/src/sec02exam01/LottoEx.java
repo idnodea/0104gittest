@@ -11,7 +11,7 @@ public class LottoEx {
 			
 //			System.out.println(Math.random());  //난수발생
 			//int num = (int) (Math.random()*45+1);
-			//System.out.println(num);
+//			System.out.println(num);
 			
 		}
 		//난수발생 2번
