@@ -3,7 +3,7 @@ package sec02exam01;
 public class OperaorEx {
 
 	public static void main(String[] args) {
-		System.out.println(0.1 == 0.1f);  //double  float 서로 타입이 다르다보니   -p120
+		System.out.println(0.1 == 0.1f);  //double  float 서로 타입이 다르다보니   -p120 
 		System.out.println((float)0.1 == 0.1f);  
 		System.out.println(0.1 == (double)0.1);  
 		System.out.println(3 == 3.0);
