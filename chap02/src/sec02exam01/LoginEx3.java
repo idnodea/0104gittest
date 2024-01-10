@@ -88,8 +88,10 @@ public class LoginEx3 {
                     String loginpassword = scanner.nextLine();
                     
                     
-                    if (loginName.equals(savedId)) {
-                        if (loginpassword.equals(savedPassword)) {
+				Object savedId = null;
+				if (loginName.equals(savedId)) {
+                        Object savedPassword = null;
+						if (loginpassword.equals(savedPassword)) {
                             System.out.println("로그인 성공");
                         } else {
                             System.out.println("로그인 실패: 비밀번호가 틀림");
