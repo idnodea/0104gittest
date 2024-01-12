@@ -1,0 +1,2 @@
+module JavaEx0112 {
+}
