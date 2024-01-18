@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class Project1 {
 	//입력값 받아올 걸 생각하고
-	static Scanner scan = new Scanner(System.in);
+	static Scanner scanner = new Scanner(System.in);
 	//스캐너를 활용할 수 있게 해주는 ctrl+shift+o  유틸스캐너추가
 	
-	public static void mainDp1(String[] args) {
+	public static void mainDp1() {
 		System.out.println("----------------------------------");
 		System.out.println("1.로그인 | 2.회원가입 | 3.예금/출금 | 4.종료");
 		System.out.println("----------------------------------");
 		
 	}
-	 public static void mainDp2(String[] args) {
+	 public static void mainDp2() {
 		System.out.println("----------------------------------");
 		System.out.println("1.예금 | 2.출금 | 3.잔고 | 4.상위메뉴");
 		System.out.println("----------------------------------");
@@ -23,7 +23,7 @@ public class Project1 {
 		while(session.isRun2()) {
 			mainDp2();
 			System.out.println("선택:");
-			int menuNum = Integer.parseInt(scan.nextLine());
+			int menuNum = Integer.parseInt(scanner.nextLine());
 			switch(menuNum) {
 				case 1:
 					//예금
@@ -50,10 +50,10 @@ public class Project1 {
 	 
 	static void menu1(Session session){
 //		boolean run = true;		
-		while(session.isrun()) {
+		while(session.isRun()) {
 			mainDp1();
 			System.out.println("선택>");
-			int menuNum=Integer.parseInt(scan.nextLine());
+			int menuNum=Integer.parseInt(scanner.nextLine());
 			switch(menuNum){
 				case 1:
 					//로그인
@@ -72,7 +72,7 @@ public class Project1 {
 						menu2(session);
 					}
 					break;
-				case 4;
+				case 4:
 					//종료
 				session.setMenuState(MenuState.TOP_EXIT);
 					System.out.println("프로그램 종료");
@@ -85,8 +85,8 @@ public class Project1 {
 	
 	
 	 public static void main(String[] args){
-		 LoginInfo LoginInfo = new LoginInfo("id","pass"); 
-		 Session session = new Session(true, false, LoginInfo);
+		 LoginInfo loginInfo = new LoginInfo("id","pass"); 
+		 Session session = new Session(true, false, loginInfo);
 		 menu1(session); 
 	 }
 	

@@ -13,5 +13,10 @@ public class LoginInfo {
 	}
 	
 	
+
+	@Override
+	public String toString() {
+		return "LoginInfo [id=" + id + ", pass=" + pass + "]";
+	}
 	
 }

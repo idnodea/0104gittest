@@ -1,21 +1,23 @@
+//20241012 3교시
 package com.project;
 
+//실행 상태의 정보를
 public class Session {
-	private boolean run;  //메뉴1
-	private boolean run2; //메뉴2
-	private LoginInfo LoginInfo;
-//	Account account;
-	private MenuState menuState = MenuState.TOP;
+	private boolean run1;
+	private boolean run2;      //private추가
+	private LoginInfo loginInfo;
+	private	MenuState menuState = MenuState.TOP; //필드 추가   //상수
 	
-	//게터세터
+	
 	public LoginInfo getLoginInfo() {
-		return LoginInfo;
+		return loginInfo;
 	}
 
 	public void setLoginInfo(LoginInfo loginInfo) {
-		LoginInfo = loginInfo;
+		this.loginInfo = loginInfo;
 	}
 
+	//메뉴스테이트를 소스-게터세터
 	public MenuState getMenuState() {
 		return menuState;
 	}
@@ -24,37 +26,47 @@ public class Session {
 		if(menuState == MenuState.DEPOSIT) {
 			run2 = true;
 		}else if(menuState == MenuState.TOP_EXIT) {
-			run = false;
-		}else if(menuState == MenuState.DEPOSIT_EXIT) {
-			run2 = false;
+			run1=false;
+			
+		}else if (menuState == MenuState.DEPOSIT_EXIT) {
+			run2 =false;
 		}
 		this.menuState = menuState;
 	}
-	
 
-	//컨스트럭터 유징 필드
-	public Session(boolean run, boolean run2, com.project.LoginInfo loginInfo, MenuState menuState) {
+	//콘스트럭쳐 유징 필드
+	public Session(boolean run1, boolean run2, LoginInfo loginInfo) {
 		super();
-		this.run = run;
+		this.run1 = run1;
 		this.run2 = run2;
-		LoginInfo = loginInfo;
-//		this.menuState = menuState;
+		this.loginInfo = loginInfo;
 	}
-	
-//	투스트링 일단 사용x
+
+	//using field
+	public Session(boolean run1, boolean run2) {
+		super();
+		this.run1 = run1;
+		this.run2 = run2;
+	}
+
+
+
+
+//  to String
 //	@Override
 //	public String toString() {
-//		return "Session [run=" + run + ", run2=" + run2 + ", LoginInfo=" + LoginInfo + ", menuState=" + menuState + "]";
+//		return "Session [run=" + run + ", run2=" + run2 + "]";
 //	}
+//	
 	
 	
-	//게터세터에서 일정부분
+	
+	//게터세터
 	public boolean isRun() {
-		return run;
+		return run1;
 	}
-	
 	public void setRun(boolean run) {
-		this.run = run;
+		this.run1 = run;
 	}
 	public boolean isRun2() {
 		return run2;
@@ -62,19 +74,7 @@ public class Session {
 	public void setRun2(boolean run2) {
 		this.run2 = run2;
 	}
-//	public LoginInfo getLoginInfo() {
-//		return LoginInfo;
-//	}
-//	public void setLoginInfo(LoginInfo loginInfo) {
-//		LoginInfo = loginInfo;
-//	}
-//	public MenuState getMenuState() {
-//		return menuState;
-//	}
-//	public void setMenuState(MenuState menuState) {
-//		this.menuState = menuState;
-//	}  
 	
-	
+	//source  겟터셉터
 	
 }
