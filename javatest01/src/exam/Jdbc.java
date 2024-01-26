@@ -17,15 +17,15 @@ public class Jdbc {
     private static Statement stmt = null;
     private static Connection conn = null;
 
-    private int deptno;
-    private String dname;
-    private String loc;
+    private int empno;
+    private String ename;
+    private String job;
 
-    public Jdbc(int deptno, String dname, String loc) {
+    public Jdbc(int empno, String ename, String job) {
         super();
-        this.deptno = deptno;
-        this.dname = dname;
-        this.loc = loc;
+        this.empno = empno;
+        this.ename = ename;
+        this.job = job;
     }
 
     public static void main(String[] args) {
@@ -80,13 +80,13 @@ public class Jdbc {
     private static void viewData() {
         try {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from dept");
+            ResultSet rs = stmt.executeQuery("select * from emp");
 
             // 조회된 데이터 출력
             while (rs.next()) {
-                System.out.print(rs.getInt("deptno") + "\t");
-                System.out.print(rs.getString("dname") + "\t");
-                System.out.println(rs.getString("loc"));
+                System.out.print(rs.getInt("empno") + "\t");
+                System.out.print(rs.getString("ename") + "\t");
+                System.out.println(rs.getString("job"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -99,17 +99,17 @@ public class Jdbc {
             Scanner scanner = new Scanner(System.in);
 
             System.out.print("부서 번호 입력: ");
-            int deptno = scanner.nextInt();
+            int empno = scanner.nextInt();
             scanner.nextLine(); // Enter 처리
 
             System.out.print("부서 이름 입력: ");
-            String dname = scanner.nextLine();
+            String ename = scanner.nextLine();
 
             System.out.print("부서 위치 입력: ");
-            String loc = scanner.nextLine();
+            String job = scanner.nextLine();
 
             // 데이터 삽입 로직 작성
-            String sql = "insert into dept(deptno, dname, loc) values (" + deptno + ", '" + dname + "', '" + loc + "')";
+            String sql = "insert into dept(empno, ename, job) values (" + empno + ", '" + ename + "', '" + job + "')";
             try {
                 int result = stmt.executeUpdate(sql);
 
@@ -171,17 +171,17 @@ public class Jdbc {
         try {
             // 스캐너
             System.out.print("부서 번호 입력: ");
-            int deptno = scanner.nextInt();
+            int empno = scanner.nextInt();
             scanner.nextLine(); // Enter 처리
 
             System.out.print("변경할 부서 이름 입력: ");
-            String newDname = scanner.nextLine();
+            String newEname = scanner.nextLine();
 
             System.out.print("변경할 부서 위치 입력: ");
-            String newLoc = scanner.nextLine();
+            String newJob = scanner.nextLine();
 
             // 데이터 변경 로직 작성
-            String sql = "update dept set dname = '" + newDname + "', loc = '" + newLoc + "' where deptno = " + deptno;
+            String sql = "update emp set ename = '" + newEname + "', job = '" + newJob + "' where empno = " + empno;
             try {
                 int result = stmt.executeUpdate(sql);
 
@@ -242,17 +242,17 @@ public class Jdbc {
         try {
             // 스캐너
             System.out.print("부서 번호 입력: ");
-            int deptno = scanner.nextInt();
+            int empno = scanner.nextInt();
             scanner.nextLine(); // Enter 처리
 
             System.out.print("부서 이름 입력: ");
-            String dname = scanner.nextLine();
+            String ename = scanner.nextLine();
 
             System.out.print("부서 위치 입력: ");
-            String loc = scanner.nextLine();
+            String job = scanner.nextLine();
 
             // 데이터 삭제 로직 작성
-            String sql = "delete from dept where deptno = " + deptno + " and dname = '" + dname + "' and loc = '" + loc + "'";
+            String sql = "delete from emp where empno = " + empno + " and ename = '" + ename + "' and job = '" + job + "'";
             try {
                 int result = stmt.executeUpdate(sql);
 
