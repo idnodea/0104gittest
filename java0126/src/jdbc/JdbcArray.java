@@ -59,5 +59,5 @@ public class JdbcArray {
                     ", sal=" + sal +
                     '}';
         }
-    }
+    }//Class.forName("org.mariadb.jdbc.Driver");
 }

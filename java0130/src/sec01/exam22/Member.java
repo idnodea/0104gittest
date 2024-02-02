@@ -19,9 +19,13 @@ public class Member {
 //	}
 //	
 	//투스트링을 수정함
+	
 	@Override
-    public String toString() {
-        return id + ":" + name;
-    }
+	public String toString() {
+		// TODO Auto-generated method stub
+		return id + ":" + name;
+	}
+	
+	
 	
 }
