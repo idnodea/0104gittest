@@ -1,0 +1,56 @@
+@import url(
+    https://fonts.google.com/share?selection.family=Monoton|Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900 
+);
+
+
+
+
+html {font-size: 16px;
+
+}
+
+h1{
+    font-weight: bold;
+    color: rgb(54, 40, 210);
+}
+
+article{
+    font-size: 40px;
+}
+
+article h1{
+    font-size: 3em;
+}
+article p{
+    font-size:1em;
+}
+article a{
+    font-size: 1rem;
+}
+
+ul{
+
+}
+ul li{
+    font-size: 40px;
+}
+
+ul li:nth-of-type(1){
+    font-family: "돋움";
+}
+ul li:nth-of-type(2){
+    font-family: "돋움";
+}
+ul li:nth-of-type(3){
+    font-family: serif;
+}
+ul li:nth-of-type(4){
+    font-family: Arial;
+}
+
+
+
+/* 
+rem은 html기준
+em은 부모요소 기준
+*/

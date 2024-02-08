@@ -15,28 +15,28 @@ public class Jdbc {
     private static final String DB_PASSWORD = "mysql";
     private static Scanner scanner = new Scanner(System.in);
     private static Connection conn = null;
-
-    private int empno;
-    private String ename;
-    private String job;
-    private int mgr;       
-    private int hiredate;   
-    private int sal;
-    private int comm;
-    private int deptno;
-
-    //유징필드
-    public Jdbc(int empno, String ename, String job, int mgr, int hiredate, int sal, int comm, int deptno) {
-		super();
-		this.empno = empno;
-		this.ename = ename;
-		this.job = job;
-		this.mgr = mgr;
-		this.hiredate = hiredate;
-		this.sal = sal;
-		this.comm = comm;
-		this.deptno = deptno;
-	}
+//
+//    private int empno;
+//    private String ename;
+//    private String job;
+//    private int mgr;       
+//    private int hiredate;   
+//    private int sal;
+//    private int comm;
+//    private int deptno;
+//
+//    //유징필드
+//    public Jdbc(int empno, String ename, String job, int mgr, int hiredate, int sal, int comm, int deptno) {
+//		super();
+//		this.empno = empno;
+//		this.ename = ename;
+//		this.job = job;
+//		this.mgr = mgr;
+//		this.hiredate = hiredate;
+//		this.sal = sal;
+//		this.comm = comm;
+//		this.deptno = deptno;
+//	}
 
 	public static void main(String[] args) {
         try {
@@ -112,13 +112,13 @@ public class Jdbc {
     private static void insertData() {
         try {
             // 스캐너
-            Scanner scanner = new Scanner(System.in);
+//            Scanner scanner = new Scanner(System.in);
 
-            System.out.print("부서 번호 입력: ");
+            System.out.print("사원 번호 입력: ");
             int empno = scanner.nextInt();
             scanner.nextLine(); // Enter 처리
 
-            System.out.print("부서 이름 입력: ");
+            System.out.print("사원 성명 입력: ");
             String ename = scanner.nextLine();
 
             System.out.print("직업 이름 입력: ");
@@ -133,7 +133,7 @@ public class Jdbc {
             System.out.print("급여 입력: ");
             int sal = scanner.nextInt();
             
-            System.out.print("comm 입력: ");
+            System.out.print("커미션 입력: ");
             int comm = scanner.nextInt();
             
             System.out.print("deptno번호 입력: ");
@@ -162,7 +162,7 @@ public class Jdbc {
     }
 
     private static void correctionData() {
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
 
         try {
             // 스캐너
@@ -185,7 +185,7 @@ public class Jdbc {
             System.out.print("변경할 급여: ");
             int newSal = scanner.nextInt();
             
-            System.out.print("변경할 comm: ");
+            System.out.print("변경할 커미션: ");
             int newComm = scanner.nextInt();
             
             System.out.print("변경할 deptno: ");
@@ -216,15 +216,15 @@ public class Jdbc {
     }
 
     private static void deleteData() {
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
 
         try {
             // 스캐너
-            System.out.print("부서 번호 입력: ");
+            System.out.print("사원 번호 입력: ");
             int empno = scanner.nextInt();
             scanner.nextLine(); // Enter 처리
 
-            System.out.print("부서 이름 입력: ");
+            System.out.print("사원 성명 입력: ");
             String ename = scanner.nextLine();
 
             System.out.print("부서 위치 입력: ");

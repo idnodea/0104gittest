@@ -26,8 +26,8 @@
     }
 %>
 <h1>학생 성적 정보</h1>
-<button onclick="location.href='mysql_List.jsp'" >성적 목록</button>
-<button onclick="location.href='mysql_Insert.jsp'">성적 입력</button>
+<button onclick="location.href='mysql_List(42).jsp'" >성적 목록</button>
+<button onclick="location.href='mysql_Insert(3).jsp'">성적 입력</button>
 
 
 

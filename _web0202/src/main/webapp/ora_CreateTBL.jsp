@@ -18,13 +18,13 @@
     ) {
     	
     	String sql = 
-                "create table score (" + 
-                "    num  int          primary key," + 
-                "    name varchar(20),             " +
-                "    kor  int,                     " +    
-                "    eng  int,                     " +
-                "    math int                      " +    
-                ")";
+    			"create table score (" + 
+    	                "    num  number(4)    primary key," + 
+    	                "    name varchar2(20),            " +
+    	                "    kor  int,                     " +    
+    	                "    eng  int,                     " +
+    	                "    math int                      " +    
+    	                ")";
     	
         stmt.executeUpdate(sql);
         out.println("성적 테이블 생성 성공 !");
