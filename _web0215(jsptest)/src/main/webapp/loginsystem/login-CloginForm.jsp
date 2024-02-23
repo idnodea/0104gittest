@@ -159,14 +159,14 @@
     <div class="form-floating">
       
       
-		 <input type="id" class="form-control" id="floatingInput" placeholder="아이디" name="id" >
+		 <input type="text" class="form-control" id="floatingInput" placeholder="아이디" name="id" >
 		
 		
       <label for="floatingInput">아이디</label>
     </div>
     <div class="form-floating">
       
-       <input type="text" class="form-control" id="floatingPassword" placeholder="이메일" name="password">
+       <input type="text" class="form-control" id="floatingPassword" placeholder="이메일" name="email">
       <label for="floatingPassword">이메일(암호)</label>
     </div>
 
@@ -175,12 +175,17 @@
       <label class="form-check-label" for="flexCheckDefault">
         아이디 저장
       </label>
+      
     </div>
-    <input class="btn btn-primary w-100 py-2" type="submit" type="submit" value="로그인">로그인</button>
-    
+    <input class="btn btn-primary w-100 py-2" type="submit" type="submit" value="로그인"></button>
+    <input action="<%=request.getContextPath()%>/loginsystem/login-Cmember_join_form" type="button" name="회원가입" 
+    value="회원가입" onclick="window.open('member_join_form.jsp', 'popup', 'width=400, height=200')" 
+    style="margin-top:15px; color: white; background-color:blue; border-radius:10px">
     <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+    
   </form>
-  <div class="goindex" ><a href="index.jsp" style="text-decoration-line"><p>사이트맵 복귀</p></a></div>
+  
+  <div class="goindex" ><a href="index.jsp" style="text-decoration-line:none;"><p>사이트맵 복귀</p></a></div>
 </main>
 
 <script src="assets/dist/js/bootstrap.bundle.min.js"></script>

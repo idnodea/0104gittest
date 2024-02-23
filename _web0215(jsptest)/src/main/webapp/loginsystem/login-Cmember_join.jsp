@@ -25,7 +25,7 @@
 <%          
         } else {
         	Member member1 = new Member(request.getParameter("id"  ),
-                    request.getParameter("pw"  ),
+                    request.getParameter("email"  ),
                     request.getParameter("name"));
             MemberDao.getInstance().insert(member1);
 

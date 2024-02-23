@@ -36,6 +36,8 @@
     content = board.getContent();
     regtime = board.getRegtime();
     hits    = board.getHits();
+    
+    id= member.getId();
 	
 	// 글 제목과 내용이 웹 페이지에 올바르게 출력되도록 
     // 공백과 줄 바꿈 처리
@@ -62,7 +64,7 @@
     </tr>
     <tr>
         <th>작성자</th>
-        <td><%=writer%><%= %></td>
+        <td><%=writer%><%=id%></td>
     </tr>
     <tr>
         <th>작성일시</th>

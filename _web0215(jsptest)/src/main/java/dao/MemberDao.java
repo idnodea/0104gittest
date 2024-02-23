@@ -19,11 +19,14 @@ public class MemberDao {
 	}
 	
 	private static void getConnection() {
-	    try {
-	        Class.forName("oracle.jdbc.driver.OracleDriver");
-	        conn = DriverManager.getConnection(
-	                "jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
-
+	   // try {
+	        //Class.forName("oracle.jdbc.driver.OracleDriver");
+	      //  conn = DriverManager.getConnection(
+	         //       "jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			   conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/project1", "root", "mysql");
 	    } catch (ClassNotFoundException | SQLException e) {
 	        e.printStackTrace();
 	    }       

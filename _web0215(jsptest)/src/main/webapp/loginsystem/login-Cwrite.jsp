@@ -8,8 +8,11 @@
 <%@ page import="java.sql.*" %>
 
 <%
+
+
+
     // 글 번호 값 얻기, 주어지지 않았으면 0으로 설정
-    //int num = Integer.parseInt(request.getParameter("num"));
+    int num = Integer.parseInt(request.getParameter("num"));
     
 
 	String id = request.getParameter("id");
@@ -33,7 +36,7 @@
     	MemberDao memberDao = MemberDao.getInstance();
     	BoardDao boardDao = BoardDao.getInstance();
     	Member member = memberDao.select(String id);
-    	Board board = boardDao.selectOne(int num);
+    	Board board = boardDao.selectOne(int num, inc);
     	
     	
     	// 글 데이터를 변수에 저장

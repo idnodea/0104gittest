@@ -14,12 +14,16 @@
 	// Mysql 접속 후 로그인 체크
 	String sql = "SELECT count(*) from member where id = ? and email = ?";
 	
-		Class.forName("oracle.jdbc.driver.OracleDriver");
+		//Class.forName("oracle.jdbc.driver.OracleDriver");
 		
+	//try (
+		//Connection conn = DriverManager.getConnection(
+               // "jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
+	Class.forName("com.mysql.cj.jdbc.Driver");
 	try (
 		Connection conn = DriverManager.getConnection(
-                "jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
-		PreparedStatement pstmt = conn.prepareStatement(sql);
+				"jdbc:mysql://localhost:3306/project1", "root", "mysql");		
+			PreparedStatement pstmt = conn.prepareStatement(sql);
 		
 	) {
 		pstmt.setString(1, id);
