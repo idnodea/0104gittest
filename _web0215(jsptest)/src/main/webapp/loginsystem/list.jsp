@@ -5,6 +5,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ page import="java.sql.*" %>
+
 <%
 	String memberId = (String)session.getAttribute("MEMBERID");
 	if (memberId == null) {
@@ -27,7 +28,7 @@
     <tr>
         <th class="num"    >번호    </th>
         <th class="title"  >제목    </th>
-        <th class="writer" >작성자  </th>
+        <th class="name" >작성자  </th>
         <th class="regtime">작성일시</th>
         <th                >조회수  </th>
     </tr>
@@ -41,7 +42,7 @@ for (Board board : bList) {
                     <%=board.getTitle()%>
                 </a>
             </td>
-            <td><%=board.getWriter()%></td>
+            <td><%=board.getName()%></td>
             <td><%=board.getRegtime()%></td>
             <td><%=board.getHits()%></td>
         </tr>

@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String id = "";
+	Cookie[] cookies = request.getCookies(); 
+	if(cookies !=null){
+		for(Cookie cookie : cookies){
+			if(cookie.getName().equals("id")){
+				id = cookie.getValue();
+				break;
+			}
+		}
+	}
+%>
+    
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="assets/js/color-modes.js"></script>
@@ -159,7 +172,7 @@
     <div class="form-floating">
       
       
-		 <input type="text" class="form-control" id="floatingInput" placeholder="아이디" name="id" >
+		 <input type="text" class="form-control" id="floatingInput" placeholder="아이디" name="id" value="<%=id %>"" >
 		
 		
       <label for="floatingInput">아이디</label>
@@ -171,7 +184,7 @@
     </div>
 
     <div class="form-check text-start my-3">
-      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault" onclick="setCookie()" name="ck" checked/>
       <label class="form-check-label" for="flexCheckDefault">
         아이디 저장
       </label>
@@ -189,6 +202,28 @@
 </main>
 
 <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-
+<script>
+function setCookie() {
+    var checkBox = document.getElementById("flexCheckDefault");
+    if (checkBox.checked) {
+        // 쿠키 이름과 값을 설정
+        var cookieName = "rememberMe";
+        var cookieValue = "true";
+        
+        // 쿠키 만료일 설정 (예: 1일)
+        var expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + 1);
+        
+        // 쿠키 문자열 생성
+        var cookieString = cookieName + "=" + cookieValue + "; expires=" + expirationDate.toUTCString() + "; path=/";
+        
+        // 쿠키 설정
+        document.cookie = cookieString;
+    } else {
+        // 체크박스가 선택되지 않았을 때, 쿠키를 제거
+        document.cookie = "rememberMe=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+}
+</script>
     </body>
 </html>

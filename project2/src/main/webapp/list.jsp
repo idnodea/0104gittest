@@ -82,8 +82,11 @@ ResultSet rs = pstmt.executeQuery();
 					<td><%=rs.getString("id")%></td>
 					<td><%=rs.getString("email")%></td>
 					<td><%=rs.getString("name")%></td>
-					<td><a
-						href="updateForm.jsp?memberno=<%=rs.getString("memberno")%>">수정</a></td>
+					<td>
+						<button class="btn btn-warning"
+							onClick='location.href=
+					    "updateForm.jsp?memberno=<%=rs.getString("memberno")%>"'>수정</button>
+					</td>
 					<td><button class="btn btn-danger"
 							onClick='location.href=
 					"memberDelete.jsp?memberno=<%=rs.getString("memberno")%>"'>삭제</button></td>
